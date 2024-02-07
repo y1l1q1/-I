@@ -1,11 +1,15 @@
-<div class="wrapper">
-  <div id="calendari"></div>
-  <footer><a href="http://boudra.me/">boudra.me</a></footer>
-</div>
-body {
+<!DOCTYPE html>
+<!-- original:https://codepen.io/boudra/pen/raErwP -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+
+    <style>
+        body {
     font-family: 'Arial', sans-serif;
-    background-color: #3b323f;
-  height: 100vh;
+    background-color: #fff;
 }
 
 .wrapper {
@@ -22,38 +26,23 @@ button::-moz-focus-inner {
 }
 
 #calendari {
-    margin: 20px 0;
-    position: relative;
-    overflow: hidden;
-    height: 310px;
-    width: 350px;
+    margin:  0 auto;
+    /* height: 330px; */
+    /* width: 350px; */
     font-size: 14px;
-    box-shadow: 0px 1px 4px rgba(0,0,0,0.4);
+    /* box-shadow: 0px 1px 4px rgba(0,0,0,0.4); */
 }
 table {
     border-collapse: collapse;
     table-layout: fixed;
-    width: 350px;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
     background-color: #fff;
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateX(0);
-    transition: all 0.3s ease;
+
+
 }
-table.actiu {
-    transform: translateX(0px)top;
-}
-table.inactiu {
-    transition: all 0.3s 0.01s ease;
-}
-table.amagat-esquerra {
-    transform: translateX(-299px);
-}
-table.amagat-dreta {
-    transform: translateX(300px);
-}
+
+
 td,th {
     text-align: center;
     background-color: #fff;
@@ -74,7 +63,7 @@ td:last-child, th:last-child {
 th {
     border-top: 1px solid rgba(0,0,0,0.1);
     border-right: 1px solid rgba(0,0,0,0.1);
-    background-color: #93AEC1;
+    background-color: #9b59b6;
     color: #fff;
     text-shadow: 0px -1px 0px rgba(0,0,0,0.2);
     font-weight: normal;
@@ -106,11 +95,11 @@ td:nth-child(even)>span {
 }
 td:last-child>span,
 td:nth-child(6)>span {
-    color: #93AEC1;
+    color: #9b59b6;
 }
 td.avui>span {
     font-weight: bold;
-    background-color: #93AEC1;
+    background-color: #9b59b6;
     color: #fff;
     border: 2px solid rgba(0,0,0,0.1);
 }
@@ -118,7 +107,7 @@ td.fora > span {
     opacity: 0.2;
 }
 td > span:hover {
-    background: #ACCBDD;
+    background: #a57cb6;
     color: #fff;
 }
 .boto-next, .boto-prev {
@@ -161,39 +150,46 @@ footer a:link {
   color: #fff;
   text-decoration: none;
 }
-var mesos = [
-    'Gener',
-    'Febrer',
-    'Març',
-    'Abril',
-    'Maig',
-    'Juny',
-    'Juliol',
-    'Agost',
-    'Septembre',
-    'Octubre',
-    'Novembre',
-    'Desembre'
+    </style>
+</head>
+<body>
+    <div class="">
+        <div id="calendari"></div>
+      </div>
+      <script>
+        var mesos = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
 ];
 
 var dies = [
-    'Diumenge',
-    'Dilluns',
-    'Dimarts',
-    'Dimecres',
-    'Dijous',
-    'Divendres',
-    'Dissabte'
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wedensday',
+    'Thursday',
+    'Friday',
+    'Saturday'
 ];
 
 var dies_abr = [
-    'dg',
-    'dl',
-    'dm',
-    'dc',
-    'dj',
-    'dv',
-    'ds'
+    'Su',
+    'Mo',
+    'Tu',
+    'We',
+    'Th',
+    'Fr',
+    'Sa'
 ];
 
 Number.prototype.pad = function(num) {
@@ -331,3 +327,7 @@ function calendari(widget, data)
 }
 
 calendari(document.getElementById('calendari'), new Date());
+
+    </script>
+</body>
+</html>
